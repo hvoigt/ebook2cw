@@ -1,0 +1,89 @@
+0.8.2 / 2013-01-04   Fabian Kurz   <fabian@fkurz.net>
+	* Time of conversion and speed-up calculations
+	* Fixed text command |T0
+	* Samplerate of output file now always according to -s parameter (no
+	  longer using LAME's own preference for the given bitrate)
+	* New text command |v for volume control
+	* Chapter splitting now possible by duration (-d seconds)
+	  and number of words (-l words) (suggested by DM3KPO)
+	* Fix inconsistent numbers for waveforms (0 = sine, 1 = sawtooth,
+	  2 = square)
+	* Fix OGG/Vorbis headers in CGI mode
+	* New CGI mode (make cgibuffered) where the whole sound file is
+	  first created temporarily and then sent to the client.
+	  This makes it possible to send the Content-Length header.
+	* Code cleanup
+
+0.8.1 / 2011-04-04   Fabian Kurz   <mail@fkurz.net>
+	* Guessing of file encoding added (-g filename).
+	* MP3 CGI fixed (crashed because OGG/Vorbis libs were called)
+	* Chapter time now properly resetted after each chapter
+	* Added -X switch (test mode: no encoder, no output files)
+	* Lame or OGG support can be disabled in the Makefile
+
+0.8.0 / 2011-01-25   Fabian Kurz   <mail@fkurz.net>
+	* ebook2cw can now also be compiled to work as a CGI on a webserver
+	* Support for OGG/Vorbis audio file format added
+	* Time of created files is now calculated accurately
+	* Option to add a noise floor with an user definable SNR added [-N]
+	  (very experimental)
+	* Waveform can now be set to sine, sawtooth or squarewave. [-T]
+	* Config files are searched in current directory, ~/.ebook2cw,
+	  and DESTDIR/share/doc/ebook2cw/examples now. ~/.ebook2cw is
+	  created if only the last is found. [Linux/Unix only]
+
+0.7.0 / 2008-07-03   Fabian Kurz   <mail@fkurz.net>
+	* Paragraph separator (<BT>) can be disabled by
+	  -p command line switch (suggested by DJ3KU).
+	* All command line parameters can now also be set in the config
+	  file ebook2cw.conf.
+	* Arbitrary character mappings are now possible.
+
+0.6.4 / 2008-05-20   Fabian Kurz   <mail@fkurz.net>
+	* Added "Farnsworth" spacing (-e) and extra inter-word spacing (-W) 
+	[suggested by DL3OBQ]
+	* Reset to original speed when using QRQ (-Q) at each new chapter can now
+	be disabled (-n) [suggested by W2UP]
+
+0.6.3 / 2008-03-10   Fabian Kurz   <mail@fkurz.net>
+	* Added the Arabic morse code alphabet
+	* Added/changed Unicode characters for Esperanto
+
+0.6.2 / 2008-02-20   Fabian Kurz   <mail@fkurz.net>
+	* Support for arbitrary prosigns added. To generate a prosign 
+	enclose the letters in angle brackets (e.g. <AR>, <SK>, ...). [tnx DL7YEC]
+
+0.6.1 / 2008-02-09   Fabian Kurz   <mail@fkurz.net>
+	* Added more Cyrillic characters, the Greek and the Hebrew
+	  alphabet to the Unicode table. Some small corrections to
+	  the existing characters.
+	* Command line switch -S with option either ISO or UTF prints
+	  a table of the available character set and the CW symbols
+	  in HTML format.
+
+0.6.0 / 2008-02-05   Fabian Kurz   <mail@fkurz.net>
+	* Full ISO 8859-1 character set is now available
+	* UTF-8 support by command line switch -u. Currently 
+	  implemented: Latin, basic cyrillic.
+
+0.5.1 / 2008-01-08   Fabian Kurz   <mail@fkurz.net>
+	* Fixed ID3 title (chapter number) generation.
+
+0.5.0 / 2007-12-19   Fabian Kurz   <mail@fkurz.net>
+	* Added support for writing ID3 tags.
+	* Added -Q command line switch: QRQ by 1 WpM every n minutes.
+
+0.4.0 / 2007-12-17   Fabian Kurz   <mail@fkurz.net>
+	* Implemented dynamic memory allocation.
+
+0.3.0 / 2007-11-28   Fabian Kurz   <mail@fkurz.net>
+	* Added forgotten characters: @ and /.
+
+0.2.0 / 2007-11-27   Fabian Kurz   <mail@fkurz.net>
+
+	* Fixed handling of umlauts
+	* The chapter separator is now case sensitive.
+
+0.1.0 / 2007-11-22   Fabian Kurz   <mail@fkurz.net>
+
+	* Initial release of ebook2cw.
