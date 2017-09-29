@@ -799,8 +799,12 @@ void openfile (int chapter, CWP *cw) {
 	ogg_packet       hdr_code;
 #endif
 
-	snprintf(outfilename, 80, "%s%04d.%s",  cw->chapterfilename, chapter, 
-			(cw->encoder == MP3) ? "mp3" : "ogg");
+	if (0)
+		snprintf(outfilename, 80, "%s%04d.%s",  cw->chapterfilename, chapter,
+				(cw->encoder == MP3) ? "mp3" : "ogg");
+	else
+		snprintf(outfilename, 80, "%s.%s",  cw->chapterfilename,
+				(cw->encoder == MP3) ? "mp3" : "ogg");
 	printf("Starting %s\n",  outfilename);
  
 	if ((cw->encoder != NOENC) && 
